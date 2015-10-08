@@ -8,9 +8,9 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'MainController'
 		})
 
-		.when('/nerds', {
-			templateUrl: 'views/nerd.html',
-			controller: 'NerdController'
+		.when('/lobby', {
+			templateUrl: 'views/lobby.html',
+			controller: 'LobbyController'
 		})
 
 		.when('/about', {
@@ -20,4 +20,4 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 	$locationProvider.html5Mode(true);
 
-}]);
+}]); 

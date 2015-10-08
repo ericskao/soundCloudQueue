@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<base href="/">
 
-	<title>Starter Node and Angular</title>
+	<title>SoundCloud Queue</title>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
@@ -16,14 +16,14 @@
 
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
-	<script src="js/controllers/NerdCtrl.js"></script>
-	<script src="js/services/NerdService.js"></script>
+	<script src="js/controllers/LobbyCtrl.js"></script>
+	<script src="js/services/LobbyService.js"></script>
 	<script src="js/controllers/AboutCtrl.js"></script>
 	<script src="js/services/AboutService.js"></script>
 	<script src="js/appRoutes.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body ng-app="sampleApp" ng-controller="NerdController">
+<body ng-app="sampleApp" ng-controller="LobbyController">
 <div class="container">
 	
 	<!-- HEADER -->
@@ -32,9 +32,9 @@
 			<a class="navbar-brand" href="/">SoundCloud Queue</a>
 		</div>
 		<ul class="nav navbar-nav">
-			<li><a href="/nerds">Nerds</a></li>
+			<li><a href="/lobby">Lobby</a></li>
 			<li><a href="/about">About</a></li>
-		</ul>
+		</ul> 
 	</nav>
 
 	<!-- ANGULAR DYNAMIC CONTENT -->
