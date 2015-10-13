@@ -1,6 +1,8 @@
 // modules =================================================
 var express        = require('express');
 var app            = express();
+var server         = require('http').Server(app);
+var io             = require('socket.io')(server);
 var mongoose       = require('mongoose');
 var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
@@ -13,6 +15,8 @@ var db = require('./config/db');
 var port = process.env.PORT || 8080; // set our port
 // mongoose.connect(db.url); // connect to our mongoDB database (commented out after you enter in your own credentials)
 
+
+
 // get all data/stuff of the body (POST) parameters
 app.use(bodyParser.json()); // parse application/json 
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
@@ -24,7 +28,14 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 // routes ==================================================
 require('./app/routes')(app); // pass our application into our routes
 
+//open socket
+// io.on('connection', function(socket){
+//   console.log('a user connected');
+// });
+
 // start app ===============================================
-app.listen(port);	
+server.listen(port);	
 console.log('Magic happens on port ' + port); 			// shoutout to the user
+
+
 exports = module.exports = app; 						// expose app
