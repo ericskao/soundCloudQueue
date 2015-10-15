@@ -13,7 +13,7 @@
 	<!-- JS -->
 	<script src="libs/angular/angular.min.js"></script>
 	<script src="libs/angular-route/angular-route.min.js"></script>
-
+	<script src="/socket.io/socket.io.js"></script>
 	<!-- ANGULAR CUSTOM -->
 	<script src="js/controllers/MainCtrl.js"></script>
 	<script src="js/controllers/LobbyCtrl.js"></script>
@@ -42,6 +42,9 @@
 	<div ng-view></div>
 
 </div>
+<script>
+  var socket = io();
+</script>
 
 </body>
 </html>

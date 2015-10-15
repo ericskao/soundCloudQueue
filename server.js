@@ -29,9 +29,12 @@ app.use(express.static(__dirname + '/public')); // set the static files location
 require('./app/routes')(app); // pass our application into our routes
 
 //open socket
-// io.on('connection', function(socket){
-//   console.log('a user connected');
-// });
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.on('disconnect', function(){
+    console.log('a user disconnected');
+  });
+});
 
 // start app ===============================================
 server.listen(port);	
